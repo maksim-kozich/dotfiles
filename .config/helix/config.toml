@@ -1,0 +1,25 @@
+# theme = "catppuccin_mocha"
+# theme = "gruvbox"
+# theme = "catppuccin_mocha"
+theme = "base16_default"
+
+[editor]
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+# [keys.normal]
+# C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+
+# [keys.insert]
+# "C-space" = "completion"
+
+# [keys.normal]
+# "*" = ["move_prev_word_start", "move_next_word_end", "search_selection", "global_search"]
+

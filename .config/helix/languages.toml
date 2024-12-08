@@ -1,0 +1,35 @@
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+
+[language-server.erlang-lsp]
+command = "erlang_ls"
+
+[[language]]
+name = "erlang"
+auto-format = true
+
+language-servers = [ "erlang-lsp" ]
+
+
+[[language]]
+name = "rust"
+
+[language.debugger]
+command = "lldb-dap"
+name = "lldb-dap"
+port-arg = "--port {}"
+transport = "tcp"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+
+[[language.debugger.templates.completion]]
+completion = "filename"
+name = "binary"
+
+[language.debugger.templates.args]
+program = "{0}"
+runInTerminal = false
+
