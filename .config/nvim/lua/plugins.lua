@@ -19,20 +19,35 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         {
-            "rebelot/kanagawa.nvim",
+            -- "rebelot/kanagawa.nvim",
+            "navarasu/onedark.nvim",
+            -- "catppuccin/nvim",
+            -- "fxn/vim-monochrome",
             config = function()
-                vim.cmd.colorscheme("kanagawa-wave")
+                -- vim.cmd.colorscheme("kanagawa-wave")
+                vim.cmd.colorscheme("onedark")
+                -- vim.cmd.colorscheme("catppuccin")
+                -- vim.cmd.colorscheme("monochrome")
             end,
         },
         {
             "nvim-treesitter/nvim-treesitter",
             config = function()
                 require("nvim-treesitter.configs").setup({
-                    ensure_installed = {"c", "lua", "vim", "vimdoc", "query", "java", "rust", "erlang", "elixir", "json", "yaml", "toml"},
+                    ensure_installed = {
+                        "c", "lua", "vim", "vimdoc", "query",
+                        "java", "rust",
+                        "erlang", "elixir", "eex", "heex",
+                        "json", "yaml", "toml"
+                    },
 
                     auto_install = true,
 
                     highlight = {
+                        enable = true,
+                    },
+
+                    indent = {
                         enable = true,
                     },
 
@@ -76,9 +91,16 @@ require("lazy").setup({
                 })
             end,
         },
-      {
-          "nvim-treesitter/nvim-treesitter-textobjects",
-      },
- },
+        {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
+        {
+            'nvim-lualine/lualine.nvim',
+            dependencies = { 'nvim-tree/nvim-web-devicons' },
+            config = function()
+                require("lualine").setup()                
+            end,
+        },
+    },
 })
 
