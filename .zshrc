@@ -133,7 +133,7 @@ source $ZSH/oh-my-zsh.sh
 # source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 # Set up fzf key bindings nad fuzzy completion
-# eval "$(fzf --zsh)"
+eval "$(fzf --zsh)"
 
 # --- setup fzf theme ---
 # fg="#CBE0F0"

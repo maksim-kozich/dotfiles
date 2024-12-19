@@ -95,12 +95,73 @@ require("lazy").setup({
             "nvim-treesitter/nvim-treesitter-textobjects",
         },
         {
-            'nvim-lualine/lualine.nvim',
-            dependencies = { 'nvim-tree/nvim-web-devicons' },
+            "nvim-lualine/lualine.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
             config = function()
                 require("lualine").setup()                
             end,
         },
+        {
+            "ibhagwan/fzf-lua",
+            -- optional for icon support
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            config = function()
+                -- calling `setup` is optional for customization
+                require("fzf-lua").setup({
+                    defaults = {
+                        git_icons = false,
+                        file_icons = false,
+                        color_icons = false,
+                    }
+                })
+            end
+        },
+        {
+            'stevearc/oil.nvim',
+            ---@module 'oil'
+            ---@type oil.SetupOpts
+            opts = {},
+            -- Optional dependencies
+            dependencies = { { "echasnovski/mini.icons", opts = {} } },
+            -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+            config = function()
+                require("oil").setup({
+                    keymaps = {
+                        ["<C-h>"] = { "actions.parent", mode = "n" },
+                        ["<BS>"] = { "actions.parent", mode = "n" },
+                        ["<C-l>"] = { "actions.select", mode = "n" },
+                    }
+                })
+            end
+        },
+        {
+            "neovim/nvim-lspconfig",
+        },
+        {
+            "williamboman/mason.nvim",
+            config = function()
+                require("mason").setup()
+            end
+        },
+        {
+            "williamboman/mason-lspconfig.nvim",
+            dependencies = { "mason.nvim" },
+            config = function()
+                require("mason-lspconfig").setup()
+                require("mason-lspconfig").setup_handlers({
+                    function (server_name)
+                        require("lspconfig")[server_name].setup({})
+                    end,
+                })
+            end
+        },
+        -- {
+        --     "mfussenegger/nvim-dap",
+        -- },
+        -- {
+        --     "nvim-neotest/nvim-nio",
+        -- },
+        -- { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
     },
 })
 
