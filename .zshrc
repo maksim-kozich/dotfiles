@@ -15,7 +15,10 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+# Each line prepends, so the last one ends up first in PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH   # asdf-managed runtimes
+export PATH=/usr/local/opt/libpq/bin:$PATH              # libpq (psql)
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -89,7 +92,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf docker)
+plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -186,3 +189,11 @@ eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Enable autocompletion for kadm
+source ~/.zsh/kadm-complete.sh
+
+# Enable autocompletion for kubectl
+source ~/.zsh/kubectl-complete.sh
+
+export PATH=$HOME/.krew/bin:$PATH                       # krew kubectl plugins (ctx, ns, oidc-login)
