@@ -1,10 +1,9 @@
 # theme = "catppuccin_mocha"
-# theme = "gruvbox"
-# theme = "catppuccin_mocha"
-theme = "base16_default"
+theme = "jetbrains_dark"
 
 [editor]
 mouse = false
+auto-save = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,7 +11,8 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = false
+
+# hidden = false
 
 # [keys.normal]
 # C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
@@ -23,3 +23,12 @@ hidden = false
 # [keys.normal]
 # "*" = ["move_prev_word_start", "move_next_word_end", "search_selection", "global_search"]
 
+[keys.normal]
+C-g = [
+    ":write-all", 
+    ":new", 
+    ":insert-output lazygit", 
+    ":buffer-close!", 
+    ":redraw", 
+    ":reload-all"
+]
