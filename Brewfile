@@ -74,10 +74,6 @@ brew "libpq"
 brew "librdkafka"
 # Next-gen compiler infrastructure
 brew "llvm"
-# Powerful, lightweight programming language
-brew "lua"
-# Package manager for the Lua programming language
-brew "luarocks"
 # Java-based project management
 brew "maven"
 # Hash utilities
