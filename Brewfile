@@ -10,8 +10,6 @@ brew "harfbuzz"
 brew "allure"
 # Automatic configure script builder
 brew "autoconf"
-# Clone of cat(1) with syntax highlighting and Git integration
-brew "bat"
 # Multi-shell multi-command argument completer
 brew "carapace"
 # GNU File, Shell, and Text utilities
