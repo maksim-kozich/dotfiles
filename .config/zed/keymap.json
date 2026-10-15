@@ -4,35 +4,9 @@
 // documentation: https://zed.dev/docs/key-bindings
 [
   {
-    // JetBrains base keymap maps cmd-- to fold; restore zoom out, fold on cmd-alt
-    "context": "Editor",
+    // JetBrains keymap binds cmd-~ to git::Branch; give it back to macOS (cycle windows backwards)
     "bindings": {
-      "cmd--": ["zed::DecreaseBufferFontSize", { "persist": false }],
-      "cmd-alt--": "editor::Fold",
-      "cmd-alt-=": "editor::UnfoldLines"
-    }
-  },
-  {
-    // cmd-1 / cmd-0 show and hide the panels (JetBrains keymap only moves focus)
-    "context": "Workspace",
-    "bindings": {
-      "cmd-1": "project_panel::Toggle",
-      "cmd-0": "git_panel::Toggle"
-    }
-  },
-  {
-    // JetBrains keymap binds these again in the Pane context, so override there too
-    "context": "Pane",
-    "bindings": {
-      "cmd-1": "project_panel::Toggle",
-      "cmd-0": "git_panel::Toggle"
-    }
-  },
-  {
-    // Markdown preview to the side (default cmd-k v is taken by the JetBrains keymap)
-    "context": "Editor && extension == md",
-    "bindings": {
-      "cmd-alt-v": "markdown::OpenPreviewToTheSide"
+      "cmd-~": null
     }
   },
   {
