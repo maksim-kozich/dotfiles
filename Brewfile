@@ -128,8 +128,6 @@ brew "tree"
 brew "tuios"
 # Command-line hypervisor using Apple's Virtualization Framework
 brew "vfkit"
-# Vi 'workalike' with many additional features
-brew "vim"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Display word differences between text files
