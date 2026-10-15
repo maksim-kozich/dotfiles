@@ -1,0 +1,16 @@
+font-size = 13
+macos-option-as-alt = false
+
+# Word navigation preserved while Option composes Lithuanian letters
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+keybind = alt+backspace=text:\x17
+# theme = JetBrains Darcula
+
+font-feature = -calt
+font-family = JetBrainsMono Nerd Font
+
+macos-titlebar-style = tabs
+
+clipboard-paste-protection = false
+link-url = false
