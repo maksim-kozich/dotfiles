@@ -16,7 +16,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Each line prepends, so the last one ends up first in PATH
-export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH                      # user-installed binaries (nvim)
 export PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH   # asdf-managed runtimes
 export PATH=/usr/local/opt/libpq/bin:$PATH              # libpq (psql)
 
