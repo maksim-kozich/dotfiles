@@ -1,0 +1,24 @@
+font-size = 13
+macos-option-as-alt = false
+
+# Word navigation preserved while Option composes Lithuanian letters
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+keybind = alt+backspace=text:\x17
+# cmd+h / cmd+l to apps as CSI u (super+h / super+l): nvim reads <D-h> / <D-l>
+keybind = cmd+h=csi:104;9u
+keybind = cmd+l=csi:108;9u
+# cmd+left / cmd+right as super+arrow (default sends ctrl-a / ctrl-e, which nvim reads as
+# increment / scroll): nvim reads <D-Left> / <D-Right>, zsh binds them in .zshrc
+keybind = cmd+left=csi:1;9D
+keybind = cmd+right=csi:1;9C
+# theme = JetBrains Darcula
+
+font-feature = -calt
+font-family = JetBrainsMono Nerd Font
+
+macos-titlebar-style = tabs
+
+clipboard-paste-protection = false
+# cmd+click opens plain-text URLs (in nvim, which takes the mouse: cmd+shift+click)
+link-url = true

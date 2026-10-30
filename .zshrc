@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME="$HOME/.config"
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1        # brew install X: don't rebuild unrelated dependents (e.g. llvm, from source on Intel)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,7 +17,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Each line prepends, so the last one ends up first in PATH
-export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH                      # user-installed binaries (nvim)
 export PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH   # asdf-managed runtimes
 export PATH=/usr/local/opt/libpq/bin:$PATH              # libpq (psql)
 
@@ -95,6 +96,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
+bindkey '^U' backward-kill-line   # Cmd+Backspace in Ghostty: delete to line start
+bindkey '^[[1;9D' beginning-of-line # Cmd+Left in Ghostty (sent as super+left, see its config)
+bindkey '^[[1;9C' end-of-line       # Cmd+Right
+# command position: don't offer shell variables -- with case-insensitive matching,
+# `kube<Tab>` would otherwise land on $KUBECONFIG instead of kubectl
+zstyle ':completion:*:*:-command-:*:*' tag-order '!parameters'
 
 # User configuration
 
@@ -110,6 +117,11 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='nvim'
 # fi
 
+export EDITOR='nvim'
+
+# Read man pages in nvim (built-in :Man)
+export MANPAGER='nvim +Man!'
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -124,8 +136,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias vi=nvim
-# alias vim=nvim
 
 # starship + plugins
 # eval "$(starship init zsh)"
@@ -180,7 +190,6 @@ eval "$(fzf --zsh)"
 # ---- Eza (better ls) -----
 
 # alias ls="eza --icons=always"
-# alias vim=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -196,4 +205,10 @@ source ~/.zsh/kadm-complete.sh
 # Enable autocompletion for kubectl
 source ~/.zsh/kubectl-complete.sh
 
-export PATH=$HOME/.krew/bin:$PATH                       # krew kubectl plugins (ctx, ns, oidc-login)
+# Enable autocompletion for yq
+source ~/.zsh/yq-complete.sh
+
+# remote <env> <app>: switch kubectl target or ssh in (Tab cycles, Ctrl+Space = fzf)
+source ~/.zsh/remote.sh
+
+export PATH=$HOME/.krew/bin:$PATH                       # krew: kubectl-oidc_login, used by every kubeconfig

@@ -1,0 +1,22 @@
+#!/bin/sh
+# dev: the current repo in its personal dev container (<repo>/.devcontainer/devcontainer.json),
+# with nvim, tools and nvim config from dotfiles. Runs the devcontainer CLI through npx
+# (cached by npm, no global install).
+#   dev up         build / start the container
+#   dev nvim [..]  nvim inside it
+#   dev sh         a shell inside it
+#   dev down       stop it (the volumes, i.e. plugins and builds, stay)
+set -e
+root=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
+config="$root/.devcontainer/devcontainer.json"
+[ -f "$config" ] || { echo "dev: no dev container config: $config" >&2; exit 1; }
+cli() { npx -y @devcontainers/cli "$@"; }
+where="--workspace-folder $root"
+
+case "${1:-}" in
+  up) cli up $where ;;
+  nvim) shift; exec npx -y @devcontainers/cli exec $where nvim "$@" ;;
+  sh) exec npx -y @devcontainers/cli exec $where bash ;;
+  down) docker stop $(docker ps -q --filter "label=devcontainer.local_folder=$root") ;;
+  *) sed -n '2,8p' "$0" | sed 's/^# \{0,1\}//'; exit 1 ;;
+esac

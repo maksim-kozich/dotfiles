@@ -1,0 +1,13 @@
+# Open files in nvim; when lazygit runs inside nvim (:tab term lazygit),
+# send them to that nvim instead of nesting a new one
+os:
+  editPreset: nvim-remote
+
+# Diffs via delta (settings come from [delta] in ~/.gitconfig).
+# '|' cycles between them
+git:
+  diffRenderers:
+    - name: side-by-side
+      command: delta --paging=never --side-by-side
+    - name: inline
+      command: delta --paging=never

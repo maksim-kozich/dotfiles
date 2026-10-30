@@ -1,0 +1,68 @@
+{
+  "plugins": {
+    "aerial.nvim": {
+      "rev": "28fe6e822ae344544c379d60fcb13c9519a1f08a",
+      "src": "https://github.com/stevearc/aerial.nvim"
+    },
+    "alabaster.nvim": {
+      "rev": "b902c73fabefc13583bfc0c18b28950ea8f6244f",
+      "src": "https://github.com/p00f/alabaster.nvim"
+    },
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "fzf-lua": {
+      "rev": "c67fadd9a24230417267e4f9068227e093c0be2b",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "d4854fa9a94b5c8b37dd209fb4a19e98e764186f",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "lackluster.nvim": {
+      "rev": "70dd682e564784893b984deb51dd5ddd263c8cc7",
+      "src": "https://github.com/slugbyte/lackluster.nvim"
+    },
+    "lazygit.nvim": {
+      "rev": "9ffc6103926718f7070fb4017694543cd7dc9718",
+      "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "lush.nvim": {
+      "rev": "9c60ec2279d62487d942ce095e49006af28eed6e",
+      "src": "https://github.com/rktjmp/lush.nvim"
+    },
+    "no-clown-fiesta.nvim": {
+      "rev": "04b808e9769ded988089772ffcaf08d92d75d927",
+      "src": "https://github.com/aktersnurra/no-clown-fiesta.nvim"
+    },
+    "nvim-tree.lua": {
+      "rev": "3be8cad084e79e84833ef98cef88116c26a224ff",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "tokyonight.nvim": {
+      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+      "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "vague.nvim": {
+      "rev": "73f8aaa866bf3d14dd0b0ab9e48c11794c1cb7ab",
+      "src": "https://github.com/vague-theme/vague.nvim"
+    },
+    "vim-tomorrow-theme": {
+      "rev": "fd25d3be7558b9f9533837f25d7b31d31438287b",
+      "src": "https://github.com/chriskempson/vim-tomorrow-theme"
+    },
+    "which-key.nvim": {
+      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
+      "src": "https://github.com/folke/which-key.nvim"
+    },
+    "zenbones.nvim": {
+      "rev": "8304d8df9b823ff11e103afa62f38c39f534abe6",
+      "src": "https://github.com/zenbones-theme/zenbones.nvim"
+    }
+  }
+}

@@ -23,12 +23,12 @@ select = "underline"
 # [keys.normal]
 # "*" = ["move_prev_word_start", "move_next_word_end", "search_selection", "global_search"]
 
-[keys.normal]
-C-g = [
-    ":write-all", 
-    ":new", 
-    ":insert-output lazygit", 
-    ":buffer-close!", 
-    ":redraw", 
-    ":reload-all"
-]
+# [keys.normal]
+# C-g = [
+#     ":write-all", 
+#     ":new", 
+#     ":insert-output lazygit", 
+#     ":buffer-close!", 
+#     ":redraw", 
+#     ":reload-all"
+# ]
